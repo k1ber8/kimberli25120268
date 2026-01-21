@@ -5,15 +5,32 @@ body {
   color: #fff;
 }
 
+/* ===== HEADER ===== */
 header {
   background: linear-gradient(90deg, #ff6ec4, #7873f5);
   padding: 20px;
   text-align: center;
+  animation: glow 3s infinite alternate;
 }
 
+/* ===== SECCIONES ===== */
 .intro, .gallery, .video {
   padding: 20px;
   text-align: center;
+}
+
+.intro img,
+.gallery img,
+.event img {
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* Hover animado */
+.intro img:hover,
+.gallery img:hover,
+.event img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(255,255,255,0.3);
 }
 
 .intro img {
@@ -27,12 +44,7 @@ header {
   border-radius: 10px;
 }
 
-footer {
-  background: #000;
-  text-align: center;
-  padding: 10px;
-  margin-top: 20px;
-}
+/* ===== EVENTO ===== */
 .event {
   display: flex;
   gap: 30px;
@@ -60,4 +72,67 @@ footer {
 .place {
   font-weight: bold;
   margin-bottom: 10px;
+}
+
+/* ===== FOOTER ===== */
+footer {
+  background: #000;
+  text-align: center;
+  padding: 10px;
+  margin-top: 20px;
+}
+
+/* ===== ANIMACIONES ===== */
+.fade-up {
+  animation: fadeUp 1.2s ease forwards;
+}
+
+.fade-left {
+  animation: fadeLeft 1.2s ease forwards;
+}
+
+.fade-down {
+  animation: fadeDown 1.2s ease forwards;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeLeft {
+  from {
+    opacity: 0;
+    transform: translateX(60px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeDown {
+  from {
+    opacity: 0;
+    transform: translateY(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes glow {
+  from {
+    box-shadow: 0 0 10px rgba(255,110,196,0.4);
+  }
+  to {
+    box-shadow: 0 0 25px rgba(120,115,245,0.7);
+  }
 }
